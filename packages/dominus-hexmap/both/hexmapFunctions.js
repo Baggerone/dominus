@@ -12,17 +12,18 @@ dHexmap.getUnitLocationBonusMultiplier = function(unit, type) {
 			multiplier = _s.villages.defense_bonus
 			break;
 		case 'capital':
-+			multiplier = _s.capitals.battleBonus
++			multiplier = 1
 +			break;
-		// case 'army':
+		 case 'army':
 		// 	if (dHexmap.isArmyOnAllyCastle(unit)) {
 		// 		multiplier = _s.castless.ally_defense_bonus
 		// 	} else if (dHexmap.isArmyOnAllyVillage(unit)) {
 		// 		multiplier = _s.village.ally_defense_bonus
-		// 	} else if (dHexmap.isArmyOnAllyCapital(unit)) {
-		// 		multiplier = _s.capitals.battleBonus;
-		// 	}
-		// 	break;
+		//	}
+		 	if (dHexmap.isArmyOnAllyCapital(unit)) {
+		 		multiplier = _s.capitals.battleBonus;
+		 	}
+		 	break;
 	}
 
 	return multiplier
